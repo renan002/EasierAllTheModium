@@ -28,11 +28,12 @@ public class BlockBreak {
 	public static void on(BreakEvent event) {
 		if(event.getPlayer().isCreative()) { return; }
 
-		if((event.getState().is(TagRegistry.OTHER_PROTECTION)) && ((event.getPlayer() instanceof FakePlayer) || (event.getPlayer() == null)) && ((event.getWorld().dimensionType().hasCeiling() == false) && (event.getWorld().dimensionType().piglinSafe() == true) && (event.getWorld().dimensionType().hasFixedTime() == false))) {
+		//TODO Add a config entry to toggle this on or off
+		/*if((event.getState().is(TagRegistry.OTHER_PROTECTION)) && ((event.getPlayer() instanceof FakePlayer) || (event.getPlayer() == null)) && ((event.getWorld().dimensionType().hasCeiling() == false) && (event.getWorld().dimensionType().piglinSafe() == true) && (event.getWorld().dimensionType().hasFixedTime() == false))) {
 
 			event.setCanceled(true);
 			return;
-		}
+		}*/
 		if((event.getState().is(TagRegistry.ALLTHEMODIUM_ORE)) && ((event.getPlayer() instanceof FakePlayer) || (event.getPlayer() == null) || (event.getPlayer().getMainHandItem().isEmpty()))) {
 			
 			event.setCanceled(true);
